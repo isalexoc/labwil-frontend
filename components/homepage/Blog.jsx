@@ -26,7 +26,7 @@ const Blog = () => {
     <section className="blog">
       <div className="container mx-auto">
         <h2 className="blog__title h2 mb-[50px] text-center xl:text-left">
-          Our Recents Posts
+          Artículos Recientes
         </h2>
 
         <motion.div
