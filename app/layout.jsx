@@ -1,5 +1,6 @@
-import Header from "@/components/Header";
 import "@/assets/styles/global.css";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 export const metadata = {
   title: "LCCP | Laboratorio Clínico Complejo Parroquial C.A.",
@@ -11,9 +12,10 @@ export const metadata = {
 const MainLayout = ({ children }) => {
   return (
     <html lang="es">
-      <body>
+      <body className="font-nunito">
         <Header />
         <main>{children}</main>
+        <Footer />
       </body>
     </html>
   );
