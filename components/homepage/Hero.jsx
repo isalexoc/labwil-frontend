@@ -42,7 +42,7 @@ const Hero = () => {
             </p>
 
             <button className="btn btn-lg btn-accent mx-auto xl:mx-0">
-              Contact us
+              Contáctanos
             </button>
           </motion.div>
 
