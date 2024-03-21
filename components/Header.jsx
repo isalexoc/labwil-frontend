@@ -4,11 +4,15 @@ import logo from "@/assets/images/logo.png";
 import Link from "next/link";
 import { useEffect } from "react";
 import { useState } from "react";
-import { FaMapMarkerAlt } from "react-icons/fa";
-import { FaPhoneAlt } from "react-icons/fa";
 import { LuSearch } from "react-icons/lu";
 import { GiHamburgerMenu } from "react-icons/gi";
-import { FaUserCircle, FaSignOutAlt } from "react-icons/fa";
+import {
+  FaUserCircle,
+  FaSignOutAlt,
+  FaMapMarkerAlt,
+  FaPhoneAlt,
+} from "react-icons/fa";
+import { FaAnglesLeft } from "react-icons/fa6";
 
 const Header = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
@@ -18,7 +22,8 @@ const Header = () => {
   useEffect(() => {
     const handleScroll = () => {
       // Set showOnScroll to true if page is scrolled more than 50 pixels, for example
-      setShowOnScroll(window.scrollY > 86);
+      const isLgScreen = window.innerWidth >= 960;
+      setShowOnScroll(isLgScreen && window.scrollY > 86);
     };
 
     // Add event listener when the component mounts
@@ -91,19 +96,23 @@ const Header = () => {
           </button>
 
           <nav
-            className={`mnav bg-white fixed w-[300px] top-0 h-screen ${
-              isNavOpen ? "left-0" : "-left-[300px]"
+            className={`mnav bg-white fixed w-[280px] top-0 h-screen ${
+              isNavOpen ? "left-0" : "-left-[280px]"
             } shadow-2xl lg:hidden transition-all duration-300 z-20`}
           >
             <button
               onClick={handleMobileMenuButton}
               className="mnav__close-btn bg-primary w-8 h-8 relative -right-full top-8 flex justify-center items-center rounded-tr-lg rounded-br-lg cursor-pointer transition-all"
             >
-              <GiHamburgerMenu
-                className={`mnav__close-btn-icon text-2xl text-white ${
-                  isNavOpen ? "ri-arrow-left-s-line" : "ri-arrow-right-s-line"
-                }`}
-              />
+              {isNavOpen ? (
+                <FaAnglesLeft
+                  className={`mnav__close-btn-icon text-2xl text-white`}
+                />
+              ) : (
+                <GiHamburgerMenu
+                  className={`mnav__close-btn-icon text-2xl text-white`}
+                />
+              )}
             </button>
 
             <div className="px-12 flex flex-col gap-y-12 h-full">
@@ -273,7 +282,7 @@ const Header = () => {
       </div>
       <nav
         className={`sticky-nav bg-white container mx-auto w-full shadow-custom1 h-16 rounded-[10px] ${
-          showOnScroll ? "lg:flex lg:show-nav" : "hidden"
+          showOnScroll ? "lg:flex show-nav" : "hidden"
         } lg:items-center lg:justify-between lg:px-[50px]`}
       >
         <ul className="flex gap-x-4">
