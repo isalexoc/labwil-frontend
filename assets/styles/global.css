@@ -80,3 +80,19 @@ h6 {
 .faq__item.open .faq__answer {
   @apply h-full;
 }
+
+/* Header */
+.sticky-nav {
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.show-nav {
+  opacity: 1;
+}
