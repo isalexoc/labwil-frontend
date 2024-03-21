@@ -273,7 +273,7 @@ const Header = () => {
       </div>
       <nav
         className={`sticky-nav bg-white container mx-auto w-full shadow-custom1 h-16 rounded-[10px] ${
-          showOnScroll ? "lg:flex show-nav" : "hidden"
+          showOnScroll ? "lg:flex lg:show-nav" : "hidden"
         } lg:items-center lg:justify-between lg:px-[50px]`}
       >
         <ul className="flex gap-x-4">
