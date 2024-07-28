@@ -85,7 +85,7 @@ h6 {
 .sticky-nav {
   position: fixed;
   top: 0;
-  z-index: 100;
+  z-index: 15;
   left: 50%;
   transform: translateX(-50%);
   width: 100%;
@@ -95,6 +95,10 @@ h6 {
 
 .mnav__close-btn {
   z-index: 150; /* Adjust this value based on your page's content */
+}
+
+.info-box {
+  z-index: 200;
 }
 
 @media (min-width: 960px) {

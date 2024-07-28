@@ -18,9 +18,9 @@ const LoginPage = () => {
     <div className="flex flex-col items-center justify-center min-h-screen bg-grey">
       <div className="p-8 bg-white rounded-lg shadow-lg max-w-sm w-full">
         <div className="flex justify-center mb-6">
-          <Image src={logo} alt="Logo" width={250} height={100} />
+          <Image src={logo} alt="Logo" width={250} height="auto" priority />
         </div>
-        <form onSubmit={handleSubmit} className="space-y-6">
+        <form id="loginForm" onSubmit={handleSubmit} className="space-y-6">
           <div className="flex items-center border-b-2 py-2">
             <FaUserAlt className="text-accent mr-2" />
             <input
